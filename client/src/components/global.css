@@ -1,0 +1,38 @@
+.Login_container{
+    width: 100%;
+    height: 100vh;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Login_form{
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;   
+}
+.Login_Link{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: flex-start;
+    align-items:flex-start;
+    margin-top: -10px;
+}
+.home_input{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.Home_form{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
