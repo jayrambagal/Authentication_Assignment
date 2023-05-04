@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await axios.get(`http://localhost:5000/users/${id}`);
+      const response = await axios.get(`https://eternalight-infotech-assignment.onrender.com/users/${id}`);
       console.log(response);
       console.log(response.data[0].email);
       setUser(response.data);
@@ -27,7 +27,7 @@ const Home = () => {
   const handleUpdate = async (event) => {
     event.preventDefault();
     const updatedUser = { name, email, password };
-    await axios.put(`http://localhost:5000/users/${id}`, updatedUser);
+    await axios.put(`https://eternalight-infotech-assignment.onrender.com/users/${id}`, updatedUser);
     window.alert("User updated successfully!");
   };
 
@@ -44,7 +44,7 @@ const Home = () => {
 
   const logoutUser = async () => {
     try {
-      await axios.get("http://localhost:5000/logout");
+      await axios.get("https://eternalight-infotech-assignment.onrender.com/logout");
        // Assumes that your frontend and backend are running on the same host
         window.confirm("are you sure to Logout")
         navigate("/")

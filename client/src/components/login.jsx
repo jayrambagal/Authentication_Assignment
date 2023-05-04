@@ -17,7 +17,7 @@ const Login = () => {
           password: password,
         };
     
-        axios.post("http://localhost:5000/login", user)
+        axios.post("https://eternalight-infotech-assignment.onrender.com/login", user)
           .then((response) => {
             console.log(response);
             console.log("User logged in successfully");

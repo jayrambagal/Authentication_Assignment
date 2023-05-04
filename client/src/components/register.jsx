@@ -19,7 +19,7 @@ const Register = () => {
           password: password,
         };
     
-        axios.post("http://localhost:5000/register", user)
+        axios.post("https://eternalight-infotech-assignment.onrender.com/register", user)
           .then((response) => {
             console.log(response);
             window.alert("User Register Successfully")

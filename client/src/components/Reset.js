@@ -15,7 +15,7 @@ const Reset = () => {
   const SendOtp = async(e)=>{
     e.preventDefault()
     try{
-        const res = await fetch('http://localhost:5000/sendmail',{
+        const res = await fetch('https://eternalight-infotech-assignment.onrender.com/sendmail',{
             method:'POST',
             body:JSON.stringify({ email}),
             headers:{'Content-Type':'application/json'}
@@ -41,7 +41,7 @@ const ResetPass = async(e)=>{
     e.preventDefault()
     console.log("we are in try block of reset pass")
     try{
-        const res = await fetch('http://localhost:5000/changepass',{
+        const res = await fetch('https://eternalight-infotech-assignment.onrender.com/changepass',{
             method:'POST',
             body:JSON.stringify({ email,Otp,password}),
             headers:{'Content-Type':'application/json'}
