@@ -202,4 +202,11 @@ const Logout = (req,res)=>{
     res.status(200).send("user logout")
 }
 
-module.exports = { Register,Login,SendMail,ChangePass,HomePage,GetDataById,UpdateDataById,Logout }
+module.exports = {  Register,
+                    Login,
+                    SendMail,
+                    ChangePass,
+                    HomePage,
+                    GetDataById,
+                    UpdateDataById,
+                    Logout }

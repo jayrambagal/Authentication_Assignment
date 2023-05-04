@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./global.css";
 import { Button, TextField } from "@material-ui/core";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 const Home = () => {
   const { id } = useParams();
@@ -9,6 +9,7 @@ const Home = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -41,6 +42,19 @@ const Home = () => {
     }
   };
 
+  const logoutUser = async () => {
+    try {
+      await axios.get("http://localhost:5000/logout");
+       // Assumes that your frontend and backend are running on the same host
+        window.confirm("are you sure to Logout")
+        navigate("/")
+      // Clear the user data from localStorage or session storage if necessary
+      // Redirect the user to the login page or homepage
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   if (!user) {
     return <p>Loading user data...</p>;
   }
@@ -49,7 +63,7 @@ const Home = () => {
     <div className="Login_container">
       <form className="Home_form" onSubmit={handleUpdate}>
         <h2>User Profile</h2>
-
+            <img className="profile_logo" src="https://avatars.githubusercontent.com/u/94613732?s=400&u=947fb334137ba0589041f709277fd665effe45a9&v=4" alt=""/>
         <div className="home_input">
           <h3>Name :</h3>
           <TextField
@@ -77,22 +91,13 @@ const Home = () => {
           />
         </div>
 
-        <div className="home_input">
-          <h3>Password :</h3>
-          <TextField
-            id="standard-basic"
-            variant="outlined"
-            label=""
-            type="text"
-            size="small"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
 
         <Button variant="outlined" color="primary" type="submit">
           update
+        </Button>
+
+        <Button variant="outlined" color="primary" onClick={logoutUser} >
+          Logout
         </Button>
       </form>
     </div>

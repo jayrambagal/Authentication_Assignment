@@ -36,3 +36,22 @@
     flex-direction: column;
     gap: 10px;
 }
+.profile_logo{
+    margin-left: 90px;
+    width: 100px;
+    height: 100px;
+}
+.reset_showemail{
+    margin-top: -50px;
+}
+.Login_ResetLink{
+    margin-top: 10px;
+    margin-left: -130px;
+    margin-bottom: 20px;
+}
+.reset_otp{
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
