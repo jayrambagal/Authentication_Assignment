@@ -132,8 +132,8 @@ const SendMail = async(req,res)=>{
             const mailTransporter = nodemailer.createTransport({
                 service:"gmail",
                 auth:{
-                    user:"jayram.bagal.it@ghrcem.raisoni.net",
-                    pass:"jayram@1234"
+                    user:"abc@gmail.com",
+                    pass:"abc@1234"
                 }
             })
             const details = {
